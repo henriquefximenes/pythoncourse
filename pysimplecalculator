@@ -1,0 +1,48 @@
+#Calculadora com while
+
+while True:
+  number_1 = input('Type the first number: ')
+  number_2 = input('Type the second number: ')
+  operator = input('Type an operator (+ - / *): ')
+
+  valid_numbers = None #flag
+  num_1_float = 0
+  num_2_float = 0
+  
+  try:
+    num_1_float = float(number_1)
+    num_2_float = float(number_2)
+    valid_numbers = True
+  except:
+    valid_numbers = None
+
+  if valid_numbers is None:
+    print('One or both numbers are invalid.')
+    continue
+
+  allow_operators = '+-/*'
+  if operator not in allow_operators:
+    print('Invalid operator.')
+  if len(operator) > 1:
+    print('You need to type just one operator.')
+    continue
+
+  #Arithmetics counts
+  
+  print('Calculating your answer. Check the result:')
+
+  if operator == '+':
+    print(f' {num_1_float} + {num_2_float} = ', num_1_float + num_2_float)
+  elif operator == '-':
+    print(f' {num_1_float} - {num_2_float} = ', num_1_float - num_2_float)
+  elif operator == '/':
+    print(f' {num_1_float} / {num_2_float} = ', num_1_float / num_2_float)
+  elif operator == '*':
+    print(f' {num_1_float} * {num_2_float} = ', num_1_float * num_2_float)
+  else:
+    print('Something was wrong.')
+
+
+  exit = input('Do you want to [e]xit?: ').lower().startwith('e')
+  if exit is True:
+    break
