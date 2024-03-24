@@ -1,4 +1,4 @@
-#Calculadora com while
+#Calculator w/ while
 
 while True:
   number_1 = input('Type the first number: ')
